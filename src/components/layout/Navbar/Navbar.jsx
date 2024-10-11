@@ -13,12 +13,12 @@ export const Navbar = () => {
       />
 
       <ul>
-        <li>Decoracíon</li>
-        <li>Arte</li>
-        <li>Moda</li>
-        <li>Joyas</li>
-        <li>Casa</li>
-        <li>Arquitectura</li>
+        <button>Decoracíon</button>
+        <button>Arte</button>
+        <button>Moda</button>
+        <button>Joyas</button>
+        <button>Casa</button>
+        <button>Arquitectura</button>
       </ul>
       <Cartwidget />
     </div>
