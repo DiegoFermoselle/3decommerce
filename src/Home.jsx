@@ -1,9 +1,12 @@
+import {Card } from "./Card"
+
 export const Home = () => {
     return(
         <main>
-            <div>
-                <h1>Producto1</h1>
-            </div>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
         </main>
     )
 };
