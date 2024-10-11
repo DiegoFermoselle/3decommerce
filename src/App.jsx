@@ -1,22 +1,14 @@
-import { useState } from 'react'
+import { Navbar } from "./Navbar"
 
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+function App(){
   return (
-    <>
-      <h1>BIENVENIDO AL 3DCOMMERSE! </h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      
-      </div>
-      
-    </>
-  )
-}
+    <div>
+      <Navbar />
+      <footer>
+        <ul></ul>
+      </footer>
+    </div>
+  );
+};
 
-export default App
+export default App;
