@@ -1,18 +1,18 @@
-import { Home } from "./Home";
-import { Navbar } from "./Navbar"
-import "./navbar.css";
+import { Home } from "./components/pages/Home";
+import { Navbar } from "./components/Navbar";
+import "./components/navbar.css";
 
-function App(){
+function App() {
   return (
     <div>
       <Navbar />
       <Home />
-    
+
       <footer>
         <ul></ul>
       </footer>
     </div>
   );
-};
+}
 
 export default App;
