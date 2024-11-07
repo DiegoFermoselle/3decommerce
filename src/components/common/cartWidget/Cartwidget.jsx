@@ -3,7 +3,7 @@ export const Cartwidget = () => {
   return (
     <div>
       <FaShoppingCart />
-      <span>24</span>
+      <span>2</span>
     </div>
   );
 };

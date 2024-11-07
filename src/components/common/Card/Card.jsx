@@ -1,13 +1,18 @@
-export const Card = ({ title, price, stock }) => {
-  //forma mas pro para hacerlo como queda arriba
-  //export const Card = (props) => {
-  //desestructuro el props
-  //const { title, price, stock } = props;
+import "./card.css";
+// export const Card = (props) => {
+export const Card = ({ producto, price, stock, image }) => {
   return (
-    <div>
-      <h2>{title}</h2>
-      <h3>{price}</h3>
-      <h3>{stock}</h3>
+    // <div className="card">
+    //   <h2 className="card__title">Producto:{props.producto}</h2>
+    //   <h2 className="card__price">Precio: ${props.price}</h2>
+    //   <h2 className="card__stock">Stock:{props.stock}</h2>
+    //   <img src={props.image} alt="" />
+    // </div>
+    <div className="card">
+      <h2 className="card__title">Producto:{producto}</h2>
+      <h2 className="card__price">Precio: ${price}</h2>
+      <h2 className="card__stock">Stock:{stock}</h2>
+      <img src={image} alt="" />
     </div>
   );
 };

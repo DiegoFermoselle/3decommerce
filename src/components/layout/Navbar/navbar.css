@@ -4,3 +4,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.navbar__button {
+  background-color: #545755;
+  color: #ffffff;
+  border: none;
+  padding: 7px 10px;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: background-color 5.5s ease;
+}
