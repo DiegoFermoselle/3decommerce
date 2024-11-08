@@ -1,43 +1,27 @@
-// import { products } from "../../../productos";
-// import { useEffect } from "react";
-// import { useState } from "react";
-// import { ItemList } from "../../common/ItemList/ItemList";
-import FetchingData from "../fetchingData/FetchingData";
-
-// let myProductsPromise = new Promise((res, rej) => {
-//   setTimeout(() => {
-//     if (products.length === 0) {
-//       rej("Sin productos");
-//     } else {
-//       res(products);
-//     }
-//   }, 2500);
-// });
+import { useState } from "react";
+import { useEffect } from "react";
+import { products } from "../../../products";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
 export const ItemListContainer = () => {
-  //declaro el estado
-  // const [myProducts, setMyProducts] = useState([]);
+  const { name } = useParams(); // {}.name --> undefined
+  // undefined || "con algo"
+  // undefined ---> estoy en el home ---> mostrar todos los productos
+  // "algo" ---> estoy en una categoria ---> una fraccion
 
-  // useEffect(() => {
-  //   myProductsPromise
-  //     .then((data) => {
-  //       setMyProducts(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     })
-  //     .finally(() => {
-  //       // console.log("Siempre se ejecuta");
-  //     });
-  // }, []);
-  // console.log(myProducts);
-  // const myProductsConMap = myProducts.map((prod) => prod.title);
-  // console.log(myProductsConMap);
+  const [items, setItems] = useState([]);
 
-  return (
-    <div>
-      {/* <ItemList myProducts={myProducts} /> */}
-      <FetchingData />
-    </div>
-  );
+  useEffect(() => {
+    const unaFraccion = products.filter(
+      (producto) => producto.category === name
+    );
+    const getProducts = new Promise((resolve) => {
+      resolve(name ? unaFraccion : products);
+    });
+    getProducts.then((res) => {
+      setItems(res);
+    });
+  }, [name]);
+  return <ItemList items={items} />;
 };

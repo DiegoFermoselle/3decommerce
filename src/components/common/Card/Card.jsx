@@ -1,6 +1,15 @@
+import { Link } from "react-router-dom";
 import "./card.css";
 // export const Card = (props) => {
-export const Card = ({ title, price, stock, description, img, category }) => {
+export const Card = ({
+  title,
+  price,
+  stock,
+  description,
+  img,
+  category,
+  id,
+}) => {
   return (
     // <div className="card">
     //   <h2 className="card__title">Producto:{props.producto}</h2>
@@ -15,7 +24,9 @@ export const Card = ({ title, price, stock, description, img, category }) => {
       <h2 className="card__stock">Descripcion:{description}</h2>
       <img src={img} alt="" />
       <h2 className="card__stock">Categoría:{category}</h2>
-      <button>Agregar al Carrito</button>
+      <Link to={`/itemDetail/${id}`}>
+        <button>Ver más detalles</button>
+      </Link>
     </div>
   );
 };
