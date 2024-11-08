@@ -2,7 +2,9 @@ import { Cartwidget } from "../../common/cartWidget/Cartwidget";
 import "./navbar.css";
 // import icono from "../../../assets/images/icono2.ico";
 
-export const Navbar = () => {
+export const Navbar = ({ darkMode }) => {
+  console.log("navbar", darkMode);
+
   return (
     <div className="container-navbar">
       {/* <h1>3DCOMMERSE</h1> */}
