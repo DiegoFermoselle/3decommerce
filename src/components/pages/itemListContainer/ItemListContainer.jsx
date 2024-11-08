@@ -1,36 +1,54 @@
 import { Card } from "../../common/Card/Card";
 import { products } from "../../../productos";
-// let task = new Promise((res, rej) => {
-//   let num = 1;
-//   if (num === 1) {
-//     res("es uno");
-//   } else {
-//     rej("No es 1");
-//   }
-// });
-//res("Promesa cumplida");
-//rej("Promesa Rechazada");
+import { useEffect } from "react";
+import { useState } from "react";
 
-//.then que sirve para capturar cuando se resuelve
-//.catch para capturar cuando se rechaza
+let myProductsPromise = new Promise((res, rej) => {
+  setTimeout(() => {
+    if (products.length === 0) {
+      rej("Sin productos");
+    } else {
+      res(products);
+    }
+  }, 2500);
+});
 
 export const ItemListContainer = () => {
-  console.log(products);
+  //declaro el estado
+  const [myProducts, setMyProducts] = useState([]);
 
-  //console.log(task);
-  // task
-  //   .then((res) => {
-  //     console.log(res);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  useEffect(() => {
+    myProductsPromise
+      .then((data) => {
+        setMyProducts(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        // console.log("Siempre se ejecuta");
+      });
+  }, []);
+  // console.log(myProducts);
+  // const myProductsConMap = myProducts.map((prod) => prod.title);
+  // console.log(myProductsConMap);
 
   return (
     <div>
-      {/* <Card ATRIBUTO y VALOR -  le paso los props que querramos/>  */}
-      <Card producto="Maceta Cónica" price={2000} stock={50} />
-      <Card producto="Velador" price={6000} stock={20} />
+      {myProducts.map((prod) => {
+        return (
+          <Card
+            img={prod.img}
+            key={prod.id}
+            title={prod.title}
+            price={prod.price}
+            stock={prod.stock}
+            description={prod.description}
+            category={prod.category}
+          />
+        );
+      })}
+      ;
     </div>
   );
 };
