@@ -15,8 +15,8 @@ export const Navbar = ({ darkMode }) => {
       />
 
       <ul>
-        <button className="navbar__button">Decoracíon</button>
-        <button className="navbar__button">Arte</button>
+        <button className="navbar__button">Filamentos</button>
+        <button className="navbar__button">Impresoras</button>
         <button className="navbar__button">Moda</button>
         <button className="navbar__button">Joyas</button>
         <button className="navbar__button">Casa</button>
