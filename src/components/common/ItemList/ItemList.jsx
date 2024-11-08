@@ -4,8 +4,8 @@ export const ItemList = ({ myProducts }) => {
   return myProducts.map(
     ({ id, title, price, stock, img, description, category }) => (
       <Card
-        img={img}
         key={id}
+        img={img}
         title={title}
         price={price}
         stock={stock}
