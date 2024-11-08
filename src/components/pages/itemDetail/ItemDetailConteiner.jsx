@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
 
   useEffect(() => {
-    let productSelected = products.find((producto) => producto.id === id);
+    let productSelected = products.find((products) => products.id === id);
     setItem(productSelected);
   }, [id]);
 

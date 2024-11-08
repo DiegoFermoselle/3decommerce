@@ -1,4 +1,4 @@
-import { Cartwidget } from "../../common/cartWidget/Cartwidget";
+import { CartWidget } from "../../common/cartWidget/Cartwidget";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 
@@ -19,23 +19,13 @@ export const Navbar = ({ darkMode }) => {
           />
         </Link>
         <ul>
-          <Link to="/" className="navbar__button">
-            TODO
-          </Link>
-          <Link to="/category/Filamentos" className="navbar__button">
-            Filamentos
-          </Link>
-          <Link to="/category/Impresoras" className="navbar__button">
-            Impresoras
-          </Link>
-          <Link to="/category/Arquitectura" className="navbar__button">
-            Arquitectura
-          </Link>
-          <Link to="/category/Casa" className="navbar__button">
-            Casa
-          </Link>
+          <Link to="/">TODO</Link>
+          <Link to="/category/Filamentos">Filamentos</Link>
+          <Link to="/category/Impresoras">Impresoras</Link>
+          <Link to="/category/Arquitectura">Arquitectura</Link>
+          <Link to="/category/Casa">Casa</Link>
         </ul>
-        <Cartwidget />
+        <CartWidget />
       </div>
     </>
   );

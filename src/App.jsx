@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar/Navbar";
 import "./components/layout/Navbar/navbar.css";
 import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
-import CartContainer from "./components/pages/cart/CartContainer";
-import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
+import CartContainer from "./components/pages/cart/CartConteiner";
+import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailConteiner";
 
 function App() {
   return (
