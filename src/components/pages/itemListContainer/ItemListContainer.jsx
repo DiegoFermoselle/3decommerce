@@ -1,7 +1,7 @@
-import { Card } from "../../common/Card/Card";
 import { products } from "../../../productos";
 import { useEffect } from "react";
 import { useState } from "react";
+import { ItemList } from "../../common/ItemList/ItemList";
 
 let myProductsPromise = new Promise((res, rej) => {
   setTimeout(() => {
@@ -35,20 +35,7 @@ export const ItemListContainer = () => {
 
   return (
     <div>
-      {myProducts.map((prod) => {
-        return (
-          <Card
-            img={prod.img}
-            key={prod.id}
-            title={prod.title}
-            price={prod.price}
-            stock={prod.stock}
-            description={prod.description}
-            category={prod.category}
-          />
-        );
-      })}
-      ;
+      <ItemList myProducts={myProducts} />
     </div>
   );
 };
