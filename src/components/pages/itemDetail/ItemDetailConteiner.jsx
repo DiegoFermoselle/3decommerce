@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { products } from "../../../products";
 import ItemDetail from "./ItemDetail";
+//HOOK PARA ACCEDER A LOS PARAMETROS DINAMICOS / SIEMPRE useParams nos devuelve un OBJETO
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {

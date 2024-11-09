@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // import icono from "../../../assets/images/icono2.ico";
 
-export const Navbar = ({ darkMode }) => {
+export const Navbar = () => {
   // console.log("navbar", darkMode);
 
   return (
@@ -19,11 +19,21 @@ export const Navbar = ({ darkMode }) => {
           />
         </Link>
         <ul>
-          <Link to="/">TODO</Link>
-          <Link to="/category/Filamentos">Filamentos</Link>
-          <Link to="/category/Impresoras">Impresoras</Link>
-          <Link to="/category/Arquitectura">Arquitectura</Link>
-          <Link to="/category/Casa">Casa</Link>
+          <Link to="/" className="navbar__button">
+            TODO
+          </Link>
+          <Link to="/category/filamentos" className="navbar__button">
+            Filamentos
+          </Link>
+          <Link to="/category/impresoras 3D" className="navbar__button">
+            Impresoras
+          </Link>
+          <Link to="/category/Arquitectura" className="navbar__button">
+            Arquitectura
+          </Link>
+          <Link to="/category/Casa" className="navbar__button">
+            Casa
+          </Link>
         </ul>
         <CartWidget />
       </div>

@@ -4,17 +4,18 @@ const ItemList = ({ items }) => {
   return (
     <>
       <h2>Listado de productos</h2>
-      <div>
+      <div className="card_conteiner">
         {items.map(
-          ({ title, price, stock, description, img, category, id }) => (
+          ({ id, title, price, stock, description, img, category }) => (
             <Card
               key={id}
               title={title}
               price={price}
               stock={stock}
               description={description}
-              image={img}
+              img={img}
               category={category}
+              id={id}
             />
           )
         )}
